@@ -1,12 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
+
+
 *{
     margin:0px;
     padding:0px;
 }
-/* html{
+html{
 	font-family: 'Roboto','Arial',sans-serif;
 	font-weight:300;
 	font-size:16px;
 	color:#555;
-} */
+}
+.content-title h3{
+	font-size:45px;
+	font-weight:500;
+	text-align:center;
+	padding-top:70px; 
+}
