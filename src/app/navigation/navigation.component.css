@@ -1,6 +1,18 @@
+#navigation-bar{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+}
+.navbar{
+    background-color:transparent;
+}
 .navigation {
-    margin-left:60%;
+    margin-left:55%;
 }
 .navigation li a{
     margin-left:10px;
+    color:white;
+}
+.navigation li a:hover{
+    color:rgb(0, 162, 255);
 }
