@@ -2,3 +2,16 @@
     height:100vh;
     background-color:white;
 }
+.content-box{
+    margin-top:50px;
+}
+.side-cover{
+    float: right;
+    height: 550px;
+    background-image:url("/assets/img/about.jpg");
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-left: 200px solid white;
+    border-top: 550px solid transparent
+}
