@@ -3,3 +3,22 @@
     height:500px;
     background-color: black;
 }
+#support{
+    background-image:url("/assets/img/support-bg.jpg");
+    height:350px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#mid-footer{
+    height:100px;
+}
+#lower-footer{
+    color:white;
+    height:50px;
+    text-align: center;
+    background-color: rgb(0, 183, 255)
+}
+#lower-footer h5{
+    padding-top: 10px;
+}

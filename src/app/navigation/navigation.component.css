@@ -1,11 +1,11 @@
 #navigation-bar{
-        position: fixed;
+        /* position: fixed;
         top: 0px;
-        width: 100%;
+        width: 100%; */
 }
-.navbar{
+/* .navbar{
     background-color:black;
-}
+} */
 .navigation {
     margin-left:55%;
 }
@@ -13,6 +13,14 @@
     margin-left:10px;
     color:white;
 }
+.navbar-brand{
+    color:white;
+}
+
 .navigation li a:hover{
-    color:rgb(0, 162, 255);
+    color:rgb(0, 217, 255);
+    border-bottom: 1px solid rgb(0, 217, 255);
+}
+.navigation li a.active{
+    color:rgb(0, 217, 255);
 }
