@@ -3,9 +3,9 @@
         top: 0px;
         width: 100%; */
 }
-/* .navbar{
+.navbar{
     background-color:black;
-} */
+}
 .navigation {
     margin-left:55%;
 }
@@ -18,9 +18,10 @@
 }
 
 .navigation li a:hover{
-    color:rgb(0, 217, 255);
-    border-bottom: 1px solid rgb(0, 217, 255);
+    color:#0ba5fd;
+    /* border-bottom: 1px solid rgb(0, 217, 255); */
 }
 .navigation li a.active{
-    color:rgb(0, 217, 255);
+    color:#0ba5fd;
 }
+

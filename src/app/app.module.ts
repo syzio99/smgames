@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { NewsComponent } from './news/news.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { GamesComponent } from './games/games.component';
 import { StoreComponent } from './store/store.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { StoreComponent } from './store/store.component';
     NewsComponent,
     AboutUsComponent,
     GamesComponent,
-    StoreComponent
+    StoreComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

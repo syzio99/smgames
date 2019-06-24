@@ -19,23 +19,54 @@
     margin-right: auto;
     margin-left: auto;
    padding-top:30px;
+   padding-bottom:15px;
 }
 .support-1{
     color:white;
 }
-
+.support-2{
+    height:296px;
+    overflow:auto;
+}
+.alert{
+    margin-top:5px;
+    /* width:90%; */
+}
 #copy-right{
     color:white;
     text-align: center;
-    padding-top:10px;
+    padding-top:15px;
 }
-
+.submit-button{
+    color:white;
+    background-color:#0ba5fd;
+    
+}
+.submit-button:hover{
+    /* color:#0ba5fd; */
+    background-color:#038ad8;
+}
 hr{
+    
     background-color:white;
-    width:70%;
+    width:75%;
     text-align:center;
     margin:0 auto;
 }
 .social:hover{
     transform:scale(1.30);
+}
+.back-to-top{  
+    background:url("/assets/icons/top-hover.png"); 
+    display:block;
+    position: fixed;
+    bottom:20px;
+    right: 2%;
+    height:48px;
+    width:48px;
+    
+}
+.back-to-top:hover{  
+    background:url("/assets/icons/top.png"); 
+    transform:scale(1.15);
 }
