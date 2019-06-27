@@ -12,8 +12,10 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
   }
-  click(el:HTMLElement){
-    el.scrollIntoView()
+  navbarshow:boolean=false;
+  showNavbar(){
+    this.navbarshow = !this.navbarshow;
   }
+
 
 }

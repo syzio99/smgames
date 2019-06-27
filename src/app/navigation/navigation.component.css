@@ -6,9 +6,9 @@
 .navbar{
     background-color:black;
 }
-.navigation {
-    margin-left:55%;
-}
+/* .navigation {
+    margin-left:50%;
+} */
 .navigation li a{
     margin-left:10px;
     color:white;
