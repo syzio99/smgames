@@ -1,0 +1,22 @@
+#news-section{
+    height:100vh;
+    background-color: white;
+}
+.container{
+    width:100%;
+}
+.news-row{
+    padding-top:50px;
+}
+.dark{
+    height:250px;
+    width:100%;
+    /* background-color:rgb(236, 236, 236); */
+     padding:20px;
+}
+.light{
+    height:250px;
+    width:100%;
+    background-color:rgb(243, 243, 243);
+     padding:20px;
+}

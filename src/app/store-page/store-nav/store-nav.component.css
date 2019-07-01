@@ -1,0 +1,27 @@
+.navbar,.dropdown-menu{
+    background-color:#1d272c;
+}
+.navigation li a{
+    font-size:18px;
+    color:white;
+}
+.navbar-brand{
+    color:white;
+}
+.navigation li a:hover{
+    color:#0ba5fd;
+   
+}
+.navigation li a.active{
+    color:#0ba5fd;
+}
+.dropdown-item:hover{
+    background-color:white;
+}
+.dropdown-toggle{
+    cursor: pointer;
+}
+.nav-icons{
+    height:38px;
+    width:38px;
+}

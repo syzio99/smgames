@@ -1,0 +1,40 @@
+#games-section{
+    height:100vh;
+    background-color: #f9f9f9;
+}
+.content-box{
+    margin-top:100px;
+}
+.col-games{
+	padding:30px 10px 30px 10px;
+	transition: transform 0.2s;
+	overflow: hidden;
+}
+.games-title h4{
+	text-align:center;
+}
+.games-link a img{
+	/*display:block;*/
+	margin-left:auto;
+	margin-right: auto;
+	width:100%;
+	overflow: hidden;
+}
+.col-g-a:hover{
+	color: #48a76a;
+    border:4px solid #48a76a;
+    background-color:white;
+	transform:scale(1.15);
+}
+.col-g-i:hover{
+	color: #f16da4;
+    border:4px solid #f16da4;
+    background-color:white;
+	transform:scale(1.15);
+}
+.col-g-w:hover{
+	color: #0ba5fd;
+    border:4px solid #0ba5fd;
+    background-color:white;
+	transform:scale(1.15);
+}
