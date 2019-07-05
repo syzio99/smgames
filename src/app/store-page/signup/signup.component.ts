@@ -8,5 +8,5 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignupComponent  {
 
-  constructor(private auth:AuthService) { }
+  constructor(public auth:AuthService) { }
 }

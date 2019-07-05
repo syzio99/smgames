@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebase:{
-  apiKey: "AIzaSyCc3Ii9Y6dhKM9PHKK0NT8j47aze-ZHYMc",
-  authDomain: "smgames-27827.firebaseapp.com",
-  databaseURL: "https://smgames-27827.firebaseio.com",
-  projectId: "smgames-27827",
-  storageBucket: "",
-  messagingSenderId: "812011456194",
-  appId: "1:812011456194:web:d403a12fde0ee870"
+    apiKey: "AIzaSyDZTuX-dY-lkkjKdO1NU8zL9Jbbg7fIhMw",
+    authDomain: "smgames-cd0b8.firebaseapp.com",
+    databaseURL: "https://smgames-cd0b8.firebaseio.com",
+    projectId: "smgames-cd0b8",
+    storageBucket: "",
+    messagingSenderId: "271196738041",
+    appId: "1:271196738041:web:340ae894431186c3"
   }
 };

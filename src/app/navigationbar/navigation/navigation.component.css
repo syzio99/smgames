@@ -3,11 +3,12 @@
         top: 0px;
         width: 100%; */
 }
-.navbar{
+.navbar,.dropdown-menu{
     background-color:black;
 }
 .navigation li a{
-    margin-left:10px;
+    /* margin-left:10px; */
+    font-size:16px;
     color:white;
 }
 .navbar-brand{
@@ -16,9 +17,17 @@
 
 .navigation li a:hover{
     color:#0ba5fd;
-    /* border-bottom: 1px solid rgb(0, 217, 255); */
 }
 .navigation li a.active{
     color:#0ba5fd;
 }
-
+.dropdown-item:hover{
+    background-color:white;
+}
+.dropdown-toggle{
+    cursor: pointer;
+}
+.nav-icons{
+    height:30px;
+    width:30px;
+}

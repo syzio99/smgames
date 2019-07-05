@@ -7,7 +7,7 @@ import { NewsComponent } from './news/news.component';
 import { ShellComponent } from './shell/shell.component';
 import { TrendingComponent } from './trending/trending.component';
 import { MainRoutingModule } from './main-routing.module';
-import { NavigationComponent } from './navigation/navigation.component';
+// import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     NewsComponent,
     ShellComponent,
     TrendingComponent,
-    NavigationComponent
+    // NavigationComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +31,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     NewsComponent,
     ShellComponent,
     TrendingComponent,
-    NavigationComponent
+    // NavigationComponent
   ],
 })
 export class MainPageModule { }

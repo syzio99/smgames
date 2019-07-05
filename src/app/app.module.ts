@@ -15,6 +15,8 @@ import {AngularFireAuthModule} from "angularfire2/auth";
 // import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from './../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { NavigationbarModule } from './navigationbar/navigationbar.module';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     MainPageModule,
     StorePageModule,
     PageFooterModule,
+    NavigationbarModule,
     AppRoutingModule,
   ],
   providers: [AngularFirestore],

@@ -11,6 +11,9 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { LogCompComponent } from './log-comp/log-comp.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthGardService } from './services/auth-gard.service';
+import { AdminCheckService } from './services/admin-check.service';
+import { NewProductComponent } from './admin/new-product/new-product.component';
 
 const mainRoutes: Routes = [
   {path:"",
@@ -18,11 +21,6 @@ const mainRoutes: Routes = [
     children:[
       {path:"products",component:ProductsComponent},
       {path:"cart",component:CartComponent},
-      {path:"checkout",component:CheckoutComponent},
-      {path:"myorders",component:MyOrderComponent},
-      {path:"ordersuccess",component:OrderSuccessComponent},
-      {path:"manageorders",component:AdminOrdersComponent},
-      {path:"manageproducts",component:AdminProductsComponent},
       { path:"log",
         component:LogCompComponent,
         children:[
@@ -31,6 +29,15 @@ const mainRoutes: Routes = [
         {path:"",redirectTo:"signup",pathMatch:"full"}
         ]
       },
+      
+      {path:"checkout",component:CheckoutComponent,canActivate:[AuthGardService]},
+      {path:"my-Orders",component:MyOrderComponent,canActivate:[AuthGardService]},
+      {path:"order-success",component:OrderSuccessComponent,canActivate:[AuthGardService]},
+      
+      {path:"manage-orders",component:AdminOrdersComponent,canActivate:[AuthGardService,AdminCheckService]},
+      {path:"manage-products",component:AdminProductsComponent,canActivate:[AuthGardService,AdminCheckService]},
+      {path:"manage-products/new-products",component:NewProductComponent,canActivate:[AuthGardService,AdminCheckService]},
+
       {path:"",redirectTo:"products",pathMatch:"full"}
     ]
   },

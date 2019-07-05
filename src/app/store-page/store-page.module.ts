@@ -14,6 +14,10 @@ import { LogCompComponent } from './log-comp/log-comp.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthService } from './services/auth.service';
+import { AuthGardService } from './services/auth-gard.service';
+import { UserService } from './services/user.service';
+// import { AdminCheckService } from './services/admin-check.service';
+import { NewProductComponent } from './admin/new-product/new-product.component';
 
 
 @NgModule({
@@ -29,14 +33,18 @@ import { AuthService } from './services/auth.service';
     StoreNavComponent,
     LogCompComponent,
     SigninComponent, 
-    SignupComponent
+    SignupComponent, NewProductComponent
 
   ],
   imports: [
     CommonModule,
     StoreRoutingModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AuthGardService,
+    UserService,
+  ],
   exports:[
     AdminOrdersComponent,
     AdminProductsComponent,

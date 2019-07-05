@@ -4,9 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 // ///////////////////////////////////////////////////////////////////
 import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
-  {path:"store",loadChildren:"./store-page/store-page.module#StorePageModule"},
-  {path:"shell",loadChildren:"./main-page/main-page.module#MainPageModule"},
-  {path:"",redirectTo:"shell",pathMatch:"full"},
+  // {path:"shell",loadChildren:"./main-page/main-page.module#MainPageModule"},
+  // {path:"store",loadChildren:"./store-page/store-page.module#StorePageModule"},
+  
+  // {path:"",redirectTo:"/shell",pathMatch:"full"},
   {path:"**",component:NotFoundComponent}
 ];
 

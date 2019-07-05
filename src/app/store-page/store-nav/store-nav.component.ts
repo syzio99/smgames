@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class StoreNavComponent{
 
-  constructor(private auth:AuthService) {
+  constructor(public auth:AuthService) {
   }
 
   navbarshow:boolean=false;

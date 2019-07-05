@@ -1,0 +1,65 @@
+<div id="navigation-bar">
+  <nav class="navbar navbar-expand-lg  fixed-top navbar-dark">
+    <a class="navbar-brand" routerLink='/shell'>
+      <img src="assets/icons/logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+      SM GAMES
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="showNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{'show':navbarshow}">
+      <ul class="navbar-nav navigation">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home-section"><strong>HOME</strong><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#trending-section"><strong>TRENDING</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#news-section"><strong>NEWS</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#games-section"><strong>GAMES</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-section"><strong>ABOUT&nbsp;US</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/store'><strong>STORE</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/support"><strong>SUPPORT</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cart">
+            <img class="nav-icons" src="/assets/icons/cart.png"><strong>CART</strong>
+          </a>
+        </li>
+        <li *ngIf="auth.user$ | async as user; else anonymousUser" class="nav-item dropdown "
+          [ngClass]="{'show':dropDownShow}" (click)="dropDown()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="{{user.photoURL}}" style="height:38px;width:38px;border-radius:50%">
+            <strong>&nbsp;{{user.displayName | uppercase}}</strong>
+          </a>
+          <div class="dropdown-menu " [ngClass]="{'show':dropDownShow}" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" routerLink="my-Orders">My Orders</a>
+            <a class="dropdown-item" *ngIf="showvar" routerLink="manage-orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink="manage-products">Manage Products</a>
+            <a class="dropdown-item" style="cursor: pointer" (click)="auth.signOut()">Log Out</a>
+          </div>
+        </li>
+        <ng-template #anonymousUser>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="log">
+              <img class="nav-icons" src="/assets/icons/login.png">
+              <strong>LOGIN</strong>
+            </a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </nav>
+</div>
