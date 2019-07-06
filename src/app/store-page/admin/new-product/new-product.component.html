@@ -1,37 +1,77 @@
-<br><br><br><br><br><br>
-<form class="form" style="border:1px solid black">
-  <div class="form-group">
-    <label for="title">Product Name</label>
-    <input id="title" type="text" class="form-control">
+<br><br><br><br><br>
+<div class="row">
+  <div class="col-md-8">
+    <form #form="ngForm" class="form" (ngSubmit)="save(form.value)">
+
+      <div class="form-group">
+        <label for="title">Product Name</label>
+        <input ngModel name="productName" #productName="ngModel" id="title" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="productName.touched && productName.invalid">
+          Product Name Is Required
+        </div>
+      </div>
+
+      <div class="form-group ">
+        <label for="price">Price</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">&#8377;</span>
+          </div>
+          <input id="price" ngModel name="price" #price="ngModel" type="number" class="form-control" required>
+          <div class="input-group-append">
+            <span class="input-group-text">.00</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+          Price Is Required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select ngModel name="category" #category="ngModel" id="category" class="form-control">
+          <!-- <option value="">--- select ---</option> -->
+          <option>Andriod</option>
+          <option>IOS</option>
+          <option>Windows</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
+          Category Is Required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input ngModel name="image" #image="ngModel" id="imageUrl" type="text" class="form-control" required url>
+        <div class="alert alert-danger" *ngIf="image.touched && image.invalid">
+          <div *ngIf="image.errors.required">Image URL Is Required</div>
+          <!-- <div *ngIf="image.errors.url">Iequired</div> -->
+        </div>
+        <!-- <label for="File">OR Drag And Drop</label>
+            <input ngModel name="image" type="file" class="form-control-file" id="File"> -->
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" ngModel name="description" #description="ngModel" id="description" cols="80"
+          rows="5" required>
+            </textarea>
+        <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+          Description Is Required
+        </div>
+      </div>
+
+      <button class="btn btn-primary">Publish</button>
+    </form>
   </div>
 
-  <div class="form-group ">
-    <label for="price">Price</label>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">&#8377;</span>
-      </div>
-      <input id="price" type="number" class="form-control">
-      <div class="input-group-append">
-        <span class="input-group-text">.00</span>
+  <div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header"><strong>Live Preview</strong></div>
+      <img class="card-img-top" *ngIf="image.value" [src]="image.value" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{productName.value}}</h5>
+        <p class="card-text">{{description.value}}</p>
+        <h5 class="card-title">{{price.value|currency:"INR"}}</h5>
       </div>
     </div>
   </div>
-
-  <div class="form-group">
-    <label for="category">Category</label>
-    <select id="category" class="form-control">
-      <option value="">--- select ---</option>
-      <option value="">Andriod</option>
-      <option value="">IOS</option>
-      <option value="">Windows</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="imageUrl">Image URL</label>
-    <input id="imageUrl" type="text" class="form-control">
-    <label for="File">OR Drag And Drop</label>
-    <input type="file" class="form-control-file" id="File">
-  </div>
-  <button class="btn btn-primary">Publish</button>
-</form>

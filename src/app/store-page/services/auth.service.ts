@@ -38,7 +38,15 @@ export class AuthService {
     })
   }
 
-  signIn(email:string,pass:string){
-    this.afAuth.auth.signInWithEmailAndPassword(email,pass);
+  idPass(email:string,pass:string){
+    this.afAuth.auth.signInWithEmailAndPassword(email,pass).then(
+      us=> {
+        if(us) {
+          this.userService.save2(email,pass);
+          let returnUrl = localStorage.getItem("returnUrl");
+          this.router.navigateByUrl(returnUrl);
+        }
+      }
+    );
   }
 }

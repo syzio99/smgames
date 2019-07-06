@@ -20,4 +20,10 @@ export class UserService {
   get(uid:string):Observable<any>{
     return this.database.object('/users/'+uid).valueChanges();
   }
+  save2(email,pass){
+    this.database.object("/users2/"+email).update({
+      name:pass,
+      email:email,
+    })
+  }
 }

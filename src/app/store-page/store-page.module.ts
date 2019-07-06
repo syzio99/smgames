@@ -18,6 +18,8 @@ import { AuthGardService } from './services/auth-gard.service';
 import { UserService } from './services/user.service';
 // import { AdminCheckService } from './services/admin-check.service';
 import { NewProductComponent } from './admin/new-product/new-product.component';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './services/product.service';
 
 
 @NgModule({
@@ -38,12 +40,14 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
   ],
   imports: [
     CommonModule,
-    StoreRoutingModule
+    StoreRoutingModule,
+    FormsModule,
   ],
   providers: [
     AuthService,
     AuthGardService,
     UserService,
+    ProductService
   ],
   exports:[
     AdminOrdersComponent,
@@ -53,7 +57,8 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
     MyOrderComponent,
     OrderSuccessComponent,
     ProductsComponent,
-    StoreComponent
+    StoreComponent,
+    FormsModule
   ],
 })
 export class StorePageModule { }

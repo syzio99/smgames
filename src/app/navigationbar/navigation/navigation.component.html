@@ -46,8 +46,8 @@
           <div class="dropdown-menu " [ngClass]="{'show':dropDownShow}" aria-labelledby="navbarDropdown">
 
             <a class="dropdown-item" routerLink="my-Orders">My Orders</a>
-            <a class="dropdown-item" *ngIf="showvar" routerLink="manage-orders">Manage Orders</a>
-            <a class="dropdown-item" routerLink="manage-products">Manage Products</a>
+            <a class="dropdown-item" *ngIf="showvar" routerLink="manage-orders">Orders Management</a>
+            <a class="dropdown-item" routerLink="manage-products">Products Management</a>
             <a class="dropdown-item" style="cursor: pointer" (click)="auth.signOut()">Log Out</a>
           </div>
         </li>

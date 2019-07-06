@@ -25,6 +25,7 @@ import { NavigationbarModule } from './navigationbar/navigationbar.module';
   ],
   imports: [
     BrowserModule,
+    
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
