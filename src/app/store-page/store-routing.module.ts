@@ -19,26 +19,73 @@ const mainRoutes: Routes = [
   {path:"",
    component:StoreComponent,
     children:[
-      {path:"products",component:ProductsComponent},
-      {path:"cart",component:CartComponent},
-      { path:"log",
-        component:LogCompComponent,
-        children:[
-        {path:"signin",component:SigninComponent},
-        {path:"signup",component:SignupComponent},
-        {path:"",redirectTo:"signup",pathMatch:"full"}
-        ]
+      {
+        path:"products",
+        component:ProductsComponent
       },
-      
-      {path:"checkout",component:CheckoutComponent,canActivate:[AuthGardService]},
-      {path:"my-Orders",component:MyOrderComponent,canActivate:[AuthGardService]},
-      {path:"order-success",component:OrderSuccessComponent,canActivate:[AuthGardService]},
-      
-      {path:"manage-orders",component:AdminOrdersComponent,canActivate:[AuthGardService,AdminCheckService]},
-      {path:"manage-products",component:AdminProductsComponent,canActivate:[AuthGardService,AdminCheckService]},
-      {path:"manage-products/new-products",component:NewProductComponent,canActivate:[AuthGardService,AdminCheckService]},
 
-      {path:"",redirectTo:"products",pathMatch:"full"}
+      {
+        path:"cart",
+        component:CartComponent
+      },
+
+    { path:"log",
+      component:LogCompComponent,
+      children:[
+      {path:"signin",component:SigninComponent},
+      {path:"signup",component:SignupComponent},
+      {path:"",redirectTo:"signup",pathMatch:"full"}
+      ]
+    },
+      
+    {
+      path:"checkout",
+      component:CheckoutComponent,
+      canActivate:[AuthGardService]
+    },
+
+    {
+      path:"my-Orders",
+      component:MyOrderComponent,
+      canActivate:[AuthGardService]
+    },
+
+    {
+      path:"order-success",
+      component:OrderSuccessComponent,
+      canActivate:[AuthGardService]
+    },
+      
+    {
+      path:"manage-orders",
+      component:AdminOrdersComponent,
+      canActivate:[AuthGardService,AdminCheckService]
+    },
+
+    {
+      path:"manage-products/new-products",
+      component:NewProductComponent,
+      canActivate:[AuthGardService,AdminCheckService]
+    },
+
+    {
+      path:"manage-products/:id",
+      component:NewProductComponent,
+      canActivate:[AuthGardService,AdminCheckService]
+    },
+
+    {
+      path:"manage-products",
+      component:AdminProductsComponent,
+      canActivate:[AuthGardService,AdminCheckService]
+    },
+
+    {
+      path:"",
+      redirectTo:"products",
+      pathMatch:"full"
+    }
+
     ]
   },
   

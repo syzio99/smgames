@@ -13,6 +13,10 @@ export class ProductService {
   }
 
   fetchProduct(){
-    return this.database.list("/products");
+    return this.database.list("/products").valueChanges();
+  }
+
+  showProduct(uid){
+    return this.database.object("/products/"+uid).valueChanges();
   }
 }

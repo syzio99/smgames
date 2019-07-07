@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
+import {take} from "rxjs/operators"
 @Component({
   selector: 'app-new-product',
   templateUrl: './new-product.component.html',
@@ -9,7 +10,19 @@ import { Router } from '@angular/router';
 })
 export class NewProductComponent implements OnInit {
 
-  constructor(private productservice:ProductService,private router:Router) { }
+  showProduct={};
+  constructor(
+    private productservice:ProductService,
+    private router:Router,
+    private route:ActivatedRoute
+    )
+    {
+        let uid = this.route.snapshot.paramMap.get("id");
+        // if(uid) {
+        //   // console.log(uid);
+        //   this.productservice.showProduct(uid).pipe(take(1)).subscribe(sp => this.showProduct=sp);
+        // }
+     }
 
   save(product){ 
     const publishProduct = confirm("Are You Sure ?");

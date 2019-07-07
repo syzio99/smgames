@@ -1,4 +1,17 @@
 <br><br><br><br><br>
-<p>
-  products works!
-</p>
+<div class="row">
+  <ng-container *ngFor="let p of products | async; let i = index">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="custom-card">
+        <div class="card " style="width: 18rem">
+          <img class="card-img-top" style="height:13rem" [src]="p.image" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{p.productName}}</h5>
+            <!-- <p class="card-text">{{p.description}}</p> -->
+            <h5 class="card-title">{{p.price|currency:"INR"}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
