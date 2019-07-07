@@ -1,7 +1,16 @@
 <br><br><br><br>
 <div class="container">
-  <button class="btn btn-primary" routerLink="/manage-products/new-products">Add new Product</button>
-    <br><br>
+  <div class="row">
+    <div class="col-md-9 col-sm-8 col-6">
+      <input class="form-control" Placeholder="Product Name...." type="text">
+    </div>
+    <div class="col-md-3 col-sm-4 col-6">
+      <button class="btn btn-primary" routerLink="/manage-products/new-products">
+        +&nbsp;New&nbsp;Product
+      </button>
+    </div>
+  </div>
+  <br><br>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -21,11 +30,11 @@
         <td>{{ap.payload.val().price | currency:"INR"}}</td>
         <td>
           <a [routerLink]="['/manage-products/',ap.key]">
-            <img class="table-icon"src="assets/icons/edit.png" alt="Edit"/>
+            <img class="table-icon" src="assets/icons/edit.png" alt="Edit" />
           </a>
         </td>
         <td>
-            <img class="table-icon" src="assets/icons/delete.png" alt="Delete" (click)="delete(ap.key)"/>
+          <img class="table-icon" src="assets/icons/delete.png" alt="Delete" (click)="delete(ap.key)" />
         </td>
       </tr>
     </tbody>

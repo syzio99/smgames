@@ -1,17 +1,56 @@
 <br><br><br><br><br>
-<div class="row">
-  <ng-container *ngFor="let p of products | async">
-    <div class="col-md-4 col-sm-6 col-xs-12">
-      <div class="custom-card">
-        <div class="card " style="width: 18rem">
-          <img class="card-img-top" style="height:13rem" [src]="p.payload.val().image" *ngIf="p.payload.val().image">
-          <div class="card-body">
-            <h5 class="card-title">{{p.payload.val().productName}}</h5>
-            <!-- <p class="card-text">{{p.payload.val().description}}</p> -->
-            <h5 class="card-title">{{p.payload.val().price|currency:"INR"}}</h5>
-          </div>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-8">
+      <input type="text" class="form-control" placeholder="Search...">
+    </div>
+    <div class="col-md-2">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" 
+          id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" (click)="showCategoryDropdown()">
+          Category
+        </button>
+        <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton"  [ngClass]="{'show':showCategory}">
+            <a class="dropdown-item" >All</a>
+          <a class="dropdown-item" >Andriod</a>
+          <a class="dropdown-item" >IOS</a>
+          <a class="dropdown-item" >Windows</a>
         </div>
       </div>
     </div>
-  </ng-container>
+    <div class="col-md-2">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" 
+            id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" (click)="showSortByDropdown()">
+            Sort By
+          </button>
+          <div class="dropdown-menu " aria-labelledby="dropdownMenuButton" [ngClass]="{'show':showSortBy}">
+            <a class="dropdown-item" >Price: Low to High</a>
+            <a class="dropdown-item" >Price: High to Low</a>
+            <a class="dropdown-item" >Newest Arrivals</a>
+            <a class="dropdown-item" >Trending</a>
+          </div>
+        </div>
+      </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <ng-container *ngFor="let p of products | async">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="custom-card">
+          <div class="card ">
+            <img class="card-img-top" style="height:13rem" [src]="p.payload.val().image" *ngIf="p.payload.val().image">
+            <div class="card-body">
+              <h5 class="card-title">{{p.payload.val().productName}}</h5>
+              <!-- <p class="card-text">{{p.payload.val().description}}</p> -->
+              <h5 class="card-title">{{p.payload.val().price|currency:"INR"}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>
