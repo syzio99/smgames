@@ -1,0 +1,7 @@
+.table-icon{
+    height:25px;
+    width:25px;
+}
+.table-icon:hover{
+    transform:scale(1.20);
+}

@@ -9,16 +9,26 @@
         <th scope="col">Name</th>
         <th scope="col">Category</th>
         <th scope="col">Price</th>
-        <th scope="col"></th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let ap of allProducts | async">
         <!-- <th scope="row">{{call()}}</th> -->
-        <td>{{ap.productName}}</td>
-        <td>{{ap.category}}</td>
-        <td>{{ap.price | currency:"INR"}}</td>
-        <td><a [routerLink]="['/manage-products/',ap.$value]">Edit</a></td>
+        <td>{{ap.payload.val().productName}}</td>
+        <td>{{ap.payload.val().category}}</td>
+        <td>{{ap.payload.val().price | currency:"INR"}}</td>
+        <td>
+          <a [routerLink]="['/manage-products/',ap.key]">
+            <img class="table-icon"src="assets/icons/edit.png"/>
+          </a>
+        </td>
+        <td>
+          <a [routerLink]="['/manage-products/',ap.key]">
+            <img class="table-icon"src="assets/icons/delete.png"/>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>

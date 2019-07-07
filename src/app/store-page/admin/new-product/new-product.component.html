@@ -1,7 +1,7 @@
 <br><br><br><br><br>
 <div class="row">
   <div class="col-md-8">
-    <form #form="ngForm" class="form" (ngSubmit)="save(form.value)">
+    <form #form="ngForm" class="form" (ngSubmit)="save(form.value)" >
 
       <div class="form-group">
         <label for="title">Product Name</label>
@@ -66,11 +66,11 @@
   <div class="col-md-4">
     <div class="card" style="width: 18rem;">
       <div class="card-header"><strong>Live Preview</strong></div>
-      <img class="card-img-top" *ngIf="image.value" [src]="image.value" alt="Card image cap">
+      <img class="card-img-top" *ngIf="image.value" [src]="showProduct.image" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">{{productName.value}}</h5>
-        <p class="card-text">{{description.value}}</p>
-        <h5 class="card-title">{{price.value|currency:"INR"}}</h5>
+        <h5 class="card-title">{{showProduct.productName}}</h5>
+        <p class="card-text">{{showProduct.description}}</p>
+        <h5 class="card-title">{{showProduct.price|currency:"INR"}}</h5>
       </div>
     </div>
   </div>
