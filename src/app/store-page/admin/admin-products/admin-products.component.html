@@ -21,13 +21,11 @@
         <td>{{ap.payload.val().price | currency:"INR"}}</td>
         <td>
           <a [routerLink]="['/manage-products/',ap.key]">
-            <img class="table-icon"src="assets/icons/edit.png"/>
+            <img class="table-icon"src="assets/icons/edit.png" alt="Edit"/>
           </a>
         </td>
         <td>
-          <a [routerLink]="['/manage-products/',ap.key]">
-            <img class="table-icon"src="assets/icons/delete.png"/>
-          </a>
+            <img class="table-icon" src="assets/icons/delete.png" alt="Delete" (click)="delete(ap.key)"/>
         </td>
       </tr>
     </tbody>
