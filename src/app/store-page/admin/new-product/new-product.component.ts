@@ -10,30 +10,29 @@ import {take} from "rxjs/operators"
 })
 export class NewProductComponent implements OnInit {
 
-  showProduct:any ={
-    // productName:"",
-    // price:"",
-    // category:"",
-    // image:"",
-    // description:""    
-  };
+  showProduct:any ={};
+  uid:string;
   constructor(
     private productservice:ProductService,
     private router:Router,
-    private route:ActivatedRoute
-    )
+    private route:ActivatedRoute)
     {
-        let uid = this.route.snapshot.paramMap.get("id");
-        if(uid) {
-          // console.log(uid);
-          this.productservice.showProduct(uid).pipe(take(1)).subscribe(sp => this.showProduct=sp);
+        this.uid = this.route.snapshot.paramMap.get("id");
+        if(this.uid) {
+          this.productservice.showProduct(this.uid).pipe(take(1)).subscribe(sp => this.showProduct=sp);
         }
      }
 
   save(product){ 
     const publishProduct = confirm("Are You Sure ?");
     if(publishProduct){
-      this.productservice.createProduct(product);
+      if(this.uid){
+        this.productservice.updateProduct(this.uid,product)
+      }
+      else{
+        this.productservice.createProduct(product);
+      }
+      
       this.router.navigate(["manage-products"]);
     } 
   }

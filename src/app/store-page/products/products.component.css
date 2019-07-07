@@ -1,12 +1,13 @@
-.custom-card{
-    /* border:1px solid red; */
-  
-    /* padding-left:30%; */
-    /* margin-top:15px; */
-}
+
 .card {
     text-align:center;
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
 }
+.card:hover {
+    box-shadow: 0 8px 16px 4px rgba(95, 95, 95, 0.2);
+  }
+  
