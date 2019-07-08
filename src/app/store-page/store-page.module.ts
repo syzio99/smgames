@@ -20,6 +20,7 @@ import { UserService } from './services/user.service';
 import { NewProductComponent } from './admin/new-product/new-product.component';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product.service';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { ProductService } from './services/product.service';
     StoreNavComponent,
     LogCompComponent,
     SigninComponent, 
-    SignupComponent, NewProductComponent
+    SignupComponent, NewProductComponent, LoadingComponent
 
   ],
   imports: [

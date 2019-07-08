@@ -37,6 +37,7 @@
       </div>
   </div>
   <br><br>
+  <loading *ngIf="showSpinner"></loading>
   <div class="row">
     <ng-container *ngFor="let p of products | async">
       <div class="col-md-4 col-sm-6 col-xs-12">

@@ -8,8 +8,10 @@ import { ProductService } from './../services/product.service';
 })
 export class ProductsComponent  {
   products;
+  showSpinner:boolean=true;
   constructor(productService:ProductService) { 
     this.products = productService.fetchProduct();
+    this.products.subscribe(() => this.showSpinner = false);
   }
 
   showCategory:boolean=false;
