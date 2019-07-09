@@ -10,8 +10,12 @@ import { Router } from '@angular/router';
 export class AdminProductsComponent{
 
   allProducts;
+  term:string;
   constructor(private ProductService:ProductService) {
-    this.allProducts = this.ProductService.fetchProduct();
+     this.ProductService.fetchProduct().subscribe((data)=>{
+      this.allProducts = data;
+
+     });;
    }
   // count =0;
   //  call(){return this.count +=1;}

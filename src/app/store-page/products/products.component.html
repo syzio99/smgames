@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-md-8">
-      <input type="text" class="form-control" placeholder="Search...">
+      <input type="text" class="form-control" name="term" [(ngModel)]="this.term" placeholder="Search...">
     </div>
     <div class="col-md-2">
       <div class="dropdown">
@@ -38,9 +38,9 @@
   </div>
   <br><br>
   <loading *ngIf="showSpinner"></loading>
-  <div class="row">
-    <ng-container *ngFor="let p of products | async">
-      <div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="row" *ngIf="products.length">
+    <ng-container *ngFor="let p of products  | filter : term ">
+      <div class="col-md-4 col-sm-6 col-12">
         <div class="custom-card">
           <div class="card ">
             <img class="card-img-top" style="height:13rem" [src]="p.payload.val().image" *ngIf="p.payload.val().image">

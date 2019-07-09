@@ -21,6 +21,7 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product.service';
 import { LoadingComponent } from './loading/loading.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { LoadingComponent } from './loading/loading.component';
     StoreNavComponent,
     LogCompComponent,
     SigninComponent, 
-    SignupComponent, NewProductComponent, LoadingComponent
+
+    SignupComponent, NewProductComponent, LoadingComponent, FilterPipe
 
   ],
   imports: [

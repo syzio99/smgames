@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-9 col-sm-8 col-6">
-      <input class="form-control" Placeholder="Product Name...." type="text">
+      <input class="form-control" Placeholder="Product Name...." [(ngModel)]="this.term" type="text">
     </div>
     <div class="col-md-3 col-sm-4 col-6">
       <button class="btn btn-primary" routerLink="/manage-products/new-products">
@@ -23,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ap of allProducts | async">
+      <tr *ngFor="let ap of allProducts | filter : term">
         <!-- <th scope="row">{{call()}}</th> -->
         <td>{{ap.payload.val().productName}}</td>
         <td>{{ap.payload.val().category}}</td>
