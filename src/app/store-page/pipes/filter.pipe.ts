@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
     return term ? items.filter(
       item => {
         let products = item.payload.val().productName;
-        if(term !== undefined || products !== undefined){
+        if(term !== undefined && products !== undefined){
           term = term.toLowerCase();
           products =products.toLowerCase();
         }

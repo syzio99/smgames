@@ -8,7 +8,7 @@ import { ProductService } from './../services/product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent  {
-  products={};
+  products;
   term:string;
   showSpinner:boolean=true;
   constructor(productService:ProductService) { 

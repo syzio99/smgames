@@ -40,7 +40,7 @@
   </div>
   <br><br>
   <loading *ngIf="showSpinner"></loading>
-  <div class="row" *ngIf="products.length">
+  <div class="row" >
     <ng-container *ngFor="let p of products  | filter : term ">
       <div class="col-md-4 col-sm-6 col-12">
         <div class="custom-card">
